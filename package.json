@@ -1,0 +1,22 @@
+{
+  "name": "@ivangarcia/poronga",
+  "version": "1.0.0",
+  "description": "This is not a bad word, is a library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanGH4/npm-joke-library.git"
+  },
+  "keywords": [
+    "png"
+  ],
+  "author": "Ivan Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanGH4/npm-joke-library/issues"
+  },
+  "homepage": "https://github.com/IvanGH4/npm-joke-library#readme"
+}
