@@ -2,7 +2,23 @@ import React, { useState } from 'react';
 
 export const Prng = ({ dark, light }) => {
   const [isDarkThemed, setIsDarkThemed] = useState(true);
-  const [answer, setAnswer] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [text, setText] = useState('');
+
+  if (!dark || !light) {
+    return (
+      <p>
+        You are not doing it right, check the{' '}
+        <a
+          href="https://my-lib-docs.vercel.app/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Docs
+        </a>
+      </p>
+    );
+  }
 
   const btnStyles = {
     color: isDarkThemed ? `${light}` : `${dark}`,
@@ -23,6 +39,7 @@ export const Prng = ({ dark, light }) => {
     margin: '0 auto',
     transition: 'all .2s ease-in',
     padding: '20px',
+    position: 'relative',
   };
 
   const optionBtnStyles = {
@@ -33,6 +50,20 @@ export const Prng = ({ dark, light }) => {
     cursor: 'pointer',
     transition: 'all .2s ease-in',
     borderRadius: '5px',
+    border: 'solid 1px #ff6622',
+  };
+
+  const modalStyles = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    zIndex: 100,
+    display: modalOpen ? 'flex' : 'none',
+    justifyContent: 'center',
+    alignItems: 'center',
   };
 
   return (
@@ -50,28 +81,21 @@ export const Prng = ({ dark, light }) => {
         </h3>
       </div>
       <div>
-        <p>Do you still think is a bad word that must not be said?</p>
-        <button style={optionBtnStyles} onClick={() => setAnswer('Y')}>
-          Yes
+        <p>Tell us what you love about this library:</p>
+        <input
+          placeholder="Your opinion is really important to us"
+          onChange={(e) => setText(e.target.value)}
+        />
+        <p>{text}</p>
+        <button style={optionBtnStyles} onClick={setModalOpen(true)}>
+          Send
         </button>
-        <button
-          style={{ ...optionBtnStyles, marginLeft: 10 }}
-          onClick={() => setAnswer('N')}
-        >
-          No
-        </button>
-        {answer !== '' && (
-          <button
-            style={{ ...optionBtnStyles, marginLeft: 10 }}
-            onClick={() => setAnswer('')}
-          >
-            Let me think again
-          </button>
-        )}
       </div>
-      <div>
-        {answer === 'Y' && <p>That's a sad answer :)</p>}
-        {answer === 'N' && <p>You are a great programmer!</p>}
+      <div style={modalStyles}>
+        <p>Did you think this worked? Haha</p>
+        <button style={optionBtnStyles} onClick={() => setModalOpen(false)}>
+          Close and go home
+        </button>
       </div>
     </div>
   );
