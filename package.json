@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/IvanGH4/npm-joke-library/issues"
   },
-  "homepage": "https://github.com/IvanGH4/npm-joke-library#readme",
+  "homepage": "https://my-lib-docs.vercel.app/",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.8",
