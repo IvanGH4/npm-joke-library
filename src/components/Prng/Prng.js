@@ -87,7 +87,7 @@ export const Prng = ({ dark, light }) => {
           onChange={(e) => setText(e.target.value)}
         />
         <p>{text}</p>
-        <button style={optionBtnStyles} onClick={setModalOpen(true)}>
+        <button style={optionBtnStyles} onClick={() => setModalOpen(true)}>
           Send
         </button>
       </div>
