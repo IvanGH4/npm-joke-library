@@ -50,10 +50,7 @@ export const Prng = ({ dark, light }) => {
         </h3>
       </div>
       <div>
-        <p>
-          Now I ask you, do you still think is a bad word, a thing that must not
-          be said, let's say in an office for example...?
-        </p>
+        <p>Do you still think is a bad word that must not be said?</p>
         <button style={optionBtnStyles} onClick={() => setAnswer('Y')}>
           Yes
         </button>
@@ -73,7 +70,7 @@ export const Prng = ({ dark, light }) => {
         )}
       </div>
       <div>
-        {answer === 'Y' && <p>Well... you're an ignorant :)</p>}
+        {answer === 'Y' && <p>That's a sad answer :)</p>}
         {answer === 'N' && <p>You are a great programmer!</p>}
       </div>
     </div>
