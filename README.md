@@ -2,10 +2,15 @@
 
 ## Easy to use:
 
-Just `npm install poronga` and then:
+Just `npm install @ivangarcia/poronga` and then:
 
 ```
-import poronga from 'poronga';
+import { Prng } from 'poronga';
 
-console.log(poronga());
+const Component = () => {
+  return (
+    <Prng dark="some color in hex or rgb" light="some color in hex or rgb" />
+  )
+}
 ```
+### And then just see the magic happen!!
