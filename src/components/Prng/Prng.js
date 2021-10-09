@@ -57,13 +57,17 @@ export const Prng = ({ dark, light }) => {
     position: 'absolute',
     top: 0,
     left: 0,
-    width: '100vw',
-    height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    boxShadow: `0 0 2px 2px ${
+      isDarkThemed ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'
+    }`,
     zIndex: 100,
     display: modalOpen ? 'flex' : 'none',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column',
   };
 
   return (
