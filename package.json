@@ -19,7 +19,5 @@
     "url": "https://github.com/IvanGH4/npm-joke-library/issues"
   },
   "homepage": "https://github.com/IvanGH4/npm-joke-library#readme",
-  "dependencies": {
-    "react": "^17.0.2"
-  }
+  "dependencies": {}
 }
