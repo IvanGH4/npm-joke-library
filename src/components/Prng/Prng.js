@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-export const Prng = () => {
+export const Prng = ({ dark, light }) => {
   const [isDarkThemed, setIsDarkThemed] = useState(true);
   const [answer, setAnswer] = useState('');
 
   const btnStyles = {
-    color: isDarkThemed ? '#ffffff' : '#333333',
-    backgroundColor: isDarkThemed ? '#4b4841' : '#ffffff',
+    color: isDarkThemed ? `${light}` : `${dark}`,
+    backgroundColor: isDarkThemed ? `${dark}` : `${light}`,
     boxShadow: `0 0 2px 2px ${
       isDarkThemed ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'
     }`,
@@ -17,8 +17,8 @@ export const Prng = () => {
   };
 
   const wrapperStyles = {
-    backgroundColor: isDarkThemed ? '#333333' : '#cccccc',
-    color: isDarkThemed ? '#ffffff' : '#333333',
+    backgroundColor: isDarkThemed ? `${dark}` : `${light}`,
+    color: isDarkThemed ? `${light}` : `${dark}`,
     maxWidth: '750px',
     margin: '0 auto',
     transition: 'all .2s ease-in',
@@ -26,8 +26,8 @@ export const Prng = () => {
   };
 
   const optionBtnStyles = {
-    color: isDarkThemed ? '#ffffff' : '#333333',
-    backgroundColor: isDarkThemed ? '#4b4841' : '#ffffff',
+    color: isDarkThemed ? `${light}` : `${dark}`,
+    backgroundColor: isDarkThemed ? `${dark}` : `${light}`,
     border: 'none',
     padding: '10px 40px',
     cursor: 'pointer',
