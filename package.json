@@ -1,6 +1,6 @@
 {
   "name": "@ivangarcia/poronga",
-  "version": "2.7.0",
+  "version": "3.0.0",
   "description": "This is not a bad word, is a library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
