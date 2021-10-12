@@ -123,7 +123,7 @@ export const Prng = ({ formData = [
     placeholder: "World",
     name: "hello"
   }
-], submitAction = () => console.log("Hello world"), ctaText = 'Send', fullWidth, border, isDark }) => {
+], submitAction = () => console.log("Hello world"), ctaText = 'Send', fullWidth, border, isDark, ctaSize = 'medium', ctaAspect = 'primary' }) => {
 
   const [values, setValues] = useState({});
 
@@ -157,7 +157,7 @@ export const Prng = ({ formData = [
           )
         })
       }
-      <SubmitBtn onClick={handleClick} type="medium" aspect="primary">
+      <SubmitBtn onClick={handleClick} type={ctaSize} aspect={ctaAspect}>
         {ctaText}
       </SubmitBtn>
     </form>
