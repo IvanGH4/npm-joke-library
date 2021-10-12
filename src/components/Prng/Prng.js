@@ -108,15 +108,11 @@ import './Form.css';
 //   );
 // };
 
-export const useUserInput = (values) => {
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-    setData({...data, values});
-  }, [values]);
+export const useUserInput = () => {
+  let localData = localStorage.getItem('data');   
 
   return {
-    data
+    data: JSON.parse(localData)
   }
 };
 
@@ -134,11 +130,12 @@ export const Prng = ({ formData = [
   const handleClick = submitAction;
 
   const setInputValues = (val) => {
-    setValues({...values, val});
+    setValues({...values, ...val});
   }
 
   useEffect(() => {
     useUserInput(values);
+    localStorage.setItem('data', JSON.stringify(values));
   }, [values]);
 
   return (
