@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, createRef } from 'react';
+import FormControl from '../FormControl/FormControl';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import './Form.css';
 
@@ -121,23 +122,18 @@ export const Prng = ({ formData = [
     name: "hello"
   }
 ], submitAction = () => console.log("Hello world"), ctaText = 'Send', fullWidth, border, isDark }) => {
-  const [form, setForm] = useState([{}]);
+
+  const [values, setValues] = useState({});
 
   const handleClick = submitAction;
 
-  useEffect(() => {
-    const formValues = formData.map(item => {
-      const itemName = item.name;
-      return {
-        itemName
-      }
-    });
-    setForm(formValues);
-  }, []);
+  const setInputValues = (val) => {
+    setValues({...values, val});
+  }
 
   useEffect(() => {
-    useUserInput(form);
-  }, [form]);
+    useUserInput(values);
+  }, [values]);
 
   return (
     <form onSubmit={(e) => e.preventDefault()} className={`${border && 'border'} ${isDark && 'dark'} ${fullWidth && 'full'}`}>
@@ -145,18 +141,16 @@ export const Prng = ({ formData = [
         formData.map((item, idx) => {
           const { label, type, placeholder, name } = item;
           return (
-            <div key={idx} className={`form-control ${fullWidth && 'full'}`}>
-              <label htmlFor={name}>{label}</label>
-              <input
-                value={form[name]}
-                onChange={(e) => setForm({...form, [name]: e.target.value})}
-                name={name} id={label}
-                placeholder={placeholder || ""}
-                type={type || text}
-                className={`${isDark && 'dark'}`}
-              />
-              {form[name]}
-            </div>
+            <FormControl
+              key={idx}
+              name={name}
+              label={label}
+              placeholder={placeholder}
+              type={type}
+              fullWidth={fullWidth}
+              isDark={isDark}
+              setInputValues={setInputValues}
+            />
           )
         })
       }
