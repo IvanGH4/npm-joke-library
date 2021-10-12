@@ -109,8 +109,14 @@ import './Form.css';
 // };
 
 export const useUserInput = (values) => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    setData({...data, values});
+  }, [values]);
+
   return {
-    data: values
+    data
   }
 };
 
