@@ -121,7 +121,7 @@ export const Prng = ({ formData = [
     name: "hello"
   }
 ], submitAction = () => console.log("Hello world"), ctaText = 'Send', fullWidth, border, isDark }) => {
-  const [form, setForm] = useState([]);
+  const [form, setForm] = useState(formData);
 
   const handleClick = submitAction;
 
