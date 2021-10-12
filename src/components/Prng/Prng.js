@@ -121,12 +121,17 @@ export const Prng = ({ formData = [
     name: "hello"
   }
 ], submitAction = () => console.log("Hello world"), ctaText = 'Send', fullWidth, border, isDark }) => {
-  const [form, setForm] = useState(formData);
+  const [form, setForm] = useState([{}]);
 
   const handleClick = submitAction;
 
   useEffect(() => {
-    const formValues = formData.map(item => ({name: item.name}));
+    const formValues = formData.map(item => {
+      const itemName = item.name;
+      return {
+        itemName
+      }
+    });
     setForm(formValues);
   }, []);
 
