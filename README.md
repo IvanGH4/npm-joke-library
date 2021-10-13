@@ -9,7 +9,7 @@ import { Prng } from 'poronga';
 
 const Component = () => {
   return (
-    <Prng dark="some color in hex or rgb" light="some color in hex or rgb" />
+    <Prng formData=[{ type: "text", label: "Name", placeholder: "Full name", name: "name" }] />
   )
 }
 ```
